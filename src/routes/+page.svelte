@@ -38,8 +38,8 @@
 
 				<footer class="flex flex-col justify-center items-start max-w-2xl mx-auto w-full mb-8 mt-8">
 					<hr class="w-full border-1 border-gray-200 dark:border-gray-800 mb-8" />
-					<div class="flex flex-row-reverse sm:flex-row mb-8 space-x-0 sm:space-x-2 w-full">
-						<a class="pl-20" href="https://www.linkedin.com/in/jakeswinford/">
+					<div class="flex sm:flex-row mb-8 space-x-0 sm:space-x-2 w-full">
+						<a class="pr-4" href="https://www.linkedin.com/in/jakeswinford/">
 							<svg
 								fill="#3a3a3a"
 								height="24px"
