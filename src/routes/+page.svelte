@@ -4,7 +4,7 @@
 
 <div class="bg-black">
 	<div class="bg-black h-screen">
-		<div class="flex flex-col justify-center px-8">
+		<div class="flex flex-col justify-center px-8 bg-black">
 			<div class="flex flex-col justify-center max-w-2xl mx-auto mb-4 mt-40">
 				<h1 class="text-5xl font-bold text-white">Hello! 👋</h1>
 				<h1 class="text-5xl font-bold text-white">I'm Jake Swinford</h1>
@@ -39,7 +39,7 @@
 				<footer class="flex flex-col justify-center items-start max-w-2xl mx-auto w-full mb-8 mt-8">
 					<hr class="w-full border-1 border-gray-200 dark:border-gray-800 mb-8" />
 					<div class="flex flex-row-reverse sm:flex-row mb-8 space-x-0 sm:space-x-2 w-full">
-						<a href="https://www.linkedin.com/in/jakeswinford/">
+						<a class="pl-20" href="https://www.linkedin.com/in/jakeswinford/">
 							<svg
 								fill="#3a3a3a"
 								height="24px"
