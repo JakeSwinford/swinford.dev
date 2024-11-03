@@ -9,16 +9,16 @@
 				<h1 class="text-5xl font-bold text-white">Hello! 👋</h1>
 				<h1 class="text-5xl font-bold text-white">I'm Jake Swinford</h1>
 				<h2 class="text-xl font-medium text-slate-500 mt-2">
-					Software Developer at Idaho National Laboratory
+					Software Engineer at Idaho National Laboratory
 				</h2>
 				<div class="prose text-md text-slate-200 mt-8 mb-8">
-					<p>Glad, you made it here! I'm currently a Software Developer based out of Idaho. 🇺🇸</p>
+					<p>Glad, you made it here! I'm currently a Software Engineer based out of Idaho. 🇺🇸</p>
 					<p>
 						In my current role at INL within the Digital Engineering Department, I contribute to
 						DeepLynx, an open-source data warehouse.
 					</p>
 					<p>
-						Before my current role, I worked as a Software Developer at IBM. During this time, I
+						Before my current role, I worked as a Software Engineer at IBM. During this time, I
 						focused on crafting software solutions for federal government clients, building MVPs and
 						POCs. I collaborated closely with the clients to understand their requirements and
 						translate them into innovative software solutions.
