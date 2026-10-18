@@ -23,8 +23,9 @@ export default defineConfig({
 	plugins: lazyPlugins(async () => {
 		const [{ sveltekit }, { default: adapter }] = await Promise.all([
 			import('@sveltejs/kit/vite'),
-			import('@sveltejs/adapter-auto')
+			import('@sveltejs/adapter-vercel')
 		]);
-		return sveltekit({ adapter: adapter() });
+		// Every page is prerendered; the runtime only covers what Vercel generates around them.
+		return sveltekit({ adapter: adapter({ runtime: 'nodejs24.x' }) });
 	})
 });
