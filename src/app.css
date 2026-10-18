@@ -1,3 +1,69 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import '@fontsource-variable/geist';
+@import '@fontsource-variable/geist-mono';
+
+:root {
+	--paper: #ffffff;
+	--ink: #0a0a0a;
+	--ink-2: #3d3d3d;
+	--muted: #6b6b6b;
+	--faint: #9b9b9b;
+	--rule: #e6e6e6;
+	--spot: #e5402a;
+
+	--sans: 'Geist Variable', ui-sans-serif, system-ui, sans-serif;
+	--mono: 'Geist Mono Variable', ui-monospace, 'SF Mono', monospace;
+
+	color-scheme: light;
+	background: var(--paper);
+	color: var(--ink);
+	font-family: var(--sans);
+	font-size: 16px;
+	line-height: 1.5;
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+}
+
+h1,
+h2,
+h3,
+p,
+ol,
+ul,
+figure {
+	margin: 0;
+	padding: 0;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+a {
+	color: inherit;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.22em;
+}
+
+:focus-visible {
+	outline: 2px solid var(--ink);
+	outline-offset: 3px;
+	border-radius: 2px;
+}
+
+::selection {
+	background: var(--ink);
+	color: var(--paper);
+}

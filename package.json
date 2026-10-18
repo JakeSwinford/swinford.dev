@@ -1,37 +1,37 @@
 {
 	"name": "swinford-dev",
-	"version": "0.0.1",
+	"version": "0.1.0",
 	"private": true,
+	"type": "module",
+	"imports": {
+		"#lib": "./src/lib",
+		"#lib/*": "./src/lib/*"
+	},
 	"scripts": {
-		"dev": "vite dev",
-		"build": "vite build",
-		"preview": "vite preview",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"lint": "prettier --check . && eslint .",
-		"format": "prettier --write ."
+		"dev": "vp dev",
+		"build": "vp build",
+		"preview": "vp preview",
+		"check": "svelte-kit sync && vp check && svelte-check --tsconfig ./tsconfig.json",
+		"test": "vp test",
+		"logo": "node scripts/generate-logo.ts"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-auto": "^3.0.0",
-		"@sveltejs/kit": "^2.0.0",
-		"@sveltejs/vite-plugin-svelte": "^3.0.0",
-		"@tailwindcss/typography": "^0.5.10",
-		"@types/eslint": "8.56.0",
-		"@typescript-eslint/eslint-plugin": "^6.0.0",
-		"@typescript-eslint/parser": "^6.0.0",
-		"autoprefixer": "^10.4.16",
-		"eslint": "^8.56.0",
-		"eslint-config-prettier": "^9.1.0",
-		"eslint-plugin-svelte": "^2.35.1",
-		"postcss": "^8.4.33",
-		"prettier": "^3.1.1",
-		"prettier-plugin-svelte": "^3.1.2",
-		"svelte": "^4.2.7",
-		"svelte-check": "^3.6.0",
-		"tailwindcss": "^3.4.1",
-		"tslib": "^2.4.1",
-		"typescript": "^5.0.0",
-		"vite": "^5.0.3"
+		"@fontsource-variable/geist": "^5.3.0",
+		"@fontsource-variable/geist-mono": "^5.3.0",
+		"@resvg/resvg-js": "^2.6.2",
+		"@sveltejs/adapter-auto": "^8.0.0",
+		"@sveltejs/kit": "^3.1.0",
+		"@sveltejs/vite-plugin-svelte": "^7.3.1",
+		"@types/node": "^24.19.2",
+		"clipper-lib": "^6.4.2",
+		"svelte": "^5.57.2",
+		"svelte-check": "^4.7.7",
+		"typescript": "~6.0.3",
+		"vite": "npm:@voidzero-dev/vite-plus-core@1.3.0",
+		"vite-plus": "1.3.0"
 	},
-	"type": "module"
+	"overrides": {
+		"vite": "npm:@voidzero-dev/vite-plus-core@1.3.0"
+	},
+	"packageManager": "npm@11.12.1"
 }
