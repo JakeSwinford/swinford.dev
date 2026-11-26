@@ -31,7 +31,12 @@
 	</header>
 
 	<main class="main">
-		<p class="about">{about}</p>
+		<div class="intro">
+			<div class="plate">
+				<Mark size="100%" drift label="Fig. 1 — z₁⁵ + z₂⁵ = 1. Calabi–Yau quintic, line screen" />
+			</div>
+			<p class="about">{about}</p>
+		</div>
 
 		<section class="experience" aria-labelledby="experience">
 			<h2 id="experience" class="label">Experience</h2>
@@ -73,18 +78,6 @@
 				{/each}
 			</ul>
 		</section>
-
-		<figure class="plate">
-			<Mark
-				size="100%"
-				drift
-				label="The Swinford mark, a line-screen rendering of the Calabi–Yau quintic"
-			/>
-			<figcaption class="label">
-				<span>Fig. 1 — z₁⁵ + z₂⁵ = 1</span>
-				<span class="faint">Calabi–Yau quintic, line screen</span>
-			</figcaption>
-		</figure>
 	</main>
 
 	<footer class="foot label">
@@ -94,15 +87,19 @@
 </div>
 
 <style>
+	/* One column, centered across the screen. The page is at least a viewport tall,
+	   and the body centers between the header and footer when it's shorter. */
 	.page {
-		--pad-x: clamp(20px, 4vw, 64px);
+		--pad-x: clamp(20px, 4vw, 40px);
 		--pad-y: clamp(20px, 3.4vh, 40px);
 
 		display: flex;
 		flex-direction: column;
-		gap: 56px;
-		/* Content tops out at 1440px and centers on very wide screens. */
-		padding: var(--pad-y) max(var(--pad-x), (100% - 1440px) / 2);
+		gap: 40px;
+		width: min(100%, 720px + 2 * var(--pad-x));
+		min-height: 100dvh;
+		margin-inline: auto;
+		padding: var(--pad-y) var(--pad-x);
 	}
 
 	.label {
@@ -110,10 +107,6 @@
 		letter-spacing: 0.04em;
 		text-transform: uppercase;
 		color: var(--muted);
-	}
-
-	.faint {
-		color: var(--faint);
 	}
 
 	.arrow {
@@ -155,8 +148,19 @@
 	/* ── Body ────────────────────────────────────────────────── */
 
 	.main {
+		flex: 1;
 		display: grid;
+		align-content: center;
 		gap: 48px;
+	}
+
+	.intro {
+		display: grid;
+		gap: 32px;
+	}
+
+	.plate {
+		width: min(100%, 260px);
 	}
 
 	.about {
@@ -219,19 +223,6 @@
 		background: var(--spot);
 	}
 
-	.plate {
-		display: flex;
-		flex-direction: column;
-		gap: 14px;
-		width: min(100%, 260px);
-	}
-
-	.plate figcaption {
-		display: flex;
-		flex-direction: column;
-		gap: 2px;
-	}
-
 	.foot {
 		display: flex;
 		flex-wrap: wrap;
@@ -241,66 +232,16 @@
 		border-top: 1px solid var(--rule);
 	}
 
-	/* ── Tablet: lists side by side ──────────────────────────── */
+	/* ── Wider screens: the mark sits beside the intro ───────── */
 
-	@media (min-width: 720px) {
-		.main {
-			grid-template-columns: 1fr 1fr;
-			column-gap: 40px;
-		}
-
-		.about,
-		.plate {
-			grid-column: 1 / -1;
-		}
-	}
-
-	/* ── Desktop: everything on one screen ───────────────────── */
-
-	/* The page stretches to exactly one viewport and centers the body between the
-	   header and footer. On a short screen where it doesn't fit, it scrolls rather
-	   than clipping. */
-	@media (min-width: 1024px) and (min-height: 600px) {
-		.page {
-			--plate: min(28vw, 50vh, 480px);
-
-			min-height: 100dvh;
-			gap: clamp(20px, 3.4vh, 48px);
-		}
-
-		.main {
-			flex: 1;
-			grid-template-columns: 1fr 1fr var(--plate);
-			grid-template-areas:
-				'about about plate'
-				'experience projects plate';
-			align-content: center;
-			column-gap: clamp(32px, 4vw, 72px);
-			row-gap: clamp(28px, 6vh, 88px);
-		}
-
-		.about {
-			grid-area: about;
-			/* Grows with the screen, held back on short ones. */
-			font-size: clamp(19px, min(1.55vw, 3vh), 30px);
-		}
-
-		.experience {
-			grid-area: experience;
-		}
-
-		.projects {
-			grid-area: projects;
+	@media (min-width: 600px) {
+		.intro {
+			grid-template-columns: 200px 1fr;
+			align-items: center;
 		}
 
 		.plate {
-			grid-area: plate;
-			align-self: center;
 			width: auto;
-		}
-
-		.item {
-			padding-top: clamp(8px, 1.6vh, 20px);
 		}
 	}
 </style>
