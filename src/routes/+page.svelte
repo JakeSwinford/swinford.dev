@@ -87,8 +87,7 @@
 </div>
 
 <style>
-	/* One column, centered across the screen. The page is at least a viewport tall,
-	   and the body centers between the header and footer when it's shorter. */
+	/* One column, centered across the screen. */
 	.page {
 		--pad-x: clamp(20px, 4vw, 40px);
 		--pad-y: clamp(20px, 3.4vh, 40px);
@@ -97,7 +96,6 @@
 		flex-direction: column;
 		gap: 40px;
 		width: min(100%, 720px + 2 * var(--pad-x));
-		min-height: 100dvh;
 		margin-inline: auto;
 		padding: var(--pad-y) var(--pad-x);
 	}
@@ -148,9 +146,7 @@
 	/* ── Body ────────────────────────────────────────────────── */
 
 	.main {
-		flex: 1;
 		display: grid;
-		align-content: center;
 		gap: 48px;
 	}
 
