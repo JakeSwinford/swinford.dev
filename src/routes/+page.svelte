@@ -87,7 +87,8 @@
 </div>
 
 <style>
-	/* One column, centered across the screen. */
+	/* One column, centered across the screen. The page is at least a viewport tall,
+	   so the footer sits at the bottom of the screen when the content is shorter. */
 	.page {
 		--pad-x: clamp(20px, 4vw, 40px);
 		--pad-y: clamp(20px, 3.4vh, 40px);
@@ -96,6 +97,7 @@
 		flex-direction: column;
 		gap: 40px;
 		width: min(100%, 720px + 2 * var(--pad-x));
+		min-height: 100dvh;
 		margin-inline: auto;
 		padding: var(--pad-y) var(--pad-x);
 	}
@@ -220,6 +222,7 @@
 	}
 
 	.foot {
+		margin-top: auto;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
