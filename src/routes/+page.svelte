@@ -1,17 +1,8 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import Mark from '#lib/Mark.svelte';
 	import { about, experience, links, location, name, projects, resume } from '#lib/content.ts';
 
 	const year = new Date().getFullYear();
-
-	let brand = $state<ReturnType<typeof Mark>>();
-
-	// The header mark turns once as the page opens, and again on hover.
-	onMount(() => {
-		const timer = setTimeout(() => brand?.turn(), 400);
-		return () => clearTimeout(timer);
-	});
 </script>
 
 <svelte:head>
@@ -24,10 +15,7 @@
 
 <div class="page">
 	<header class="top">
-		<a class="brand" href="/" aria-label="{name}, home" onmouseenter={() => brand?.turn()}>
-			<Mark size={32} bind:this={brand} />
-			<span>{name}</span>
-		</a>
+		<a class="brand" href="/" aria-label="{name}, home">{name}</a>
 		<ul class="links">
 			<li>
 				<a href={resume} target="_blank">Resume<span class="arrow" aria-hidden="true">↗</span></a>
@@ -144,9 +132,6 @@
 	}
 
 	.brand {
-		display: inline-flex;
-		align-items: center;
-		gap: 10px;
 		font-weight: 500;
 		letter-spacing: -0.01em;
 		text-decoration: none;
